@@ -45,17 +45,27 @@ if (heroElement) {
 
 // 6. Säkerhetsförsök: sätt p.innerHTML = '<img src="x" onerror="console.log(\'Attack!\')">'
 //    Vad händer i Console? Byt sedan till p.textContent med samma text. Vad händer nu?
+
 // Det står attack i console när innerHTML används och img-taggen försöker ladda en ogiltig bild.
 // När textContent används visas bara texten som den är, ingen kod exekveras.
-// TODO
-// Byt till textContent
 
 //p.textContent = '<img src="x" onerror="console.log(\'Attack!\')">';
 
 
 // DEL 2: koppla ihop med funktionerna i ui.js ----------------------------
 // 7. Hämta #meny-lista och #meny-rubrik.
+const menyLista = document.querySelector<HTMLElement>("#meny-lista");
+const menyRubrik = document.querySelector<HTMLElement>("#meny-rubrik");
 // 8. Anropa visaMeny med menyn, och uppdateraRubrik med antalet rätter.
+if (menyLista && menyRubrik) {
+	visaMeny(menyLista, meny);
+	uppdateraRubrik(menyRubrik, meny.length);
+}
 // 9. Dagens rätt = den billigaste lunchen. Använd filter och billigast (från meny.js)
 //    och markeraDagensRatt.
+const luncher = meny.filter(r => r.kategori === "lunch");
+const billigasteLunch = billigast(luncher);
+if (menyLista && billigasteLunch) {
+	markeraDagensRatt(menyLista, billigasteLunch.id);
+}
 // TODO
