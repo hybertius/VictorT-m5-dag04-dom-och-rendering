@@ -49,8 +49,8 @@ if (heroElement) {
 // När textContent används visas bara texten som den är, ingen kod exekveras.
 // TODO
 // Byt till textContent
-//p.innerHTML = '<img src="x" onerror="console.log(\'Attack!\')">';
-p.textContent = '<img src="x" onerror="console.log(\'Attack!\')">';
+
+//p.textContent = '<img src="x" onerror="console.log(\'Attack!\')">';
 
 
 // DEL 2: koppla ihop med funktionerna i ui.js ----------------------------
