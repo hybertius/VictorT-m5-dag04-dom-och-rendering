@@ -45,7 +45,7 @@ export function visaMeny(container: HTMLElement, ratter: Ratt[]): void {
   if (ratter.length === 0) {
     const p = document.createElement("p");
     p.classList.add("tom");
-    p.textContent = "Inga rätter hittades.";
+    p.textContent = "Ta det lugnt. Menyn är tom. Ett steg i taget.";
     container.append(p);
     return;
   }
