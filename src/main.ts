@@ -67,5 +67,9 @@ const luncher = meny.filter(r => r.kategori === "lunch");
 const billigasteLunch = billigast(luncher);
 if (menyLista && billigasteLunch) {
 	markeraDagensRatt(menyLista, billigasteLunch.id);
+// visaMeny(menyLista, []);
 }
-// TODO
+
+// Testa att visa en tom meny
+
+
