@@ -37,10 +37,20 @@ if (hero) {
 
 // 5. Lägg klassen "dagens" på #hero med classList.add. Ta bort den med classList.remove.
 
+const heroElement = document.querySelector<HTMLElement>("#hero");
+if (heroElement) {
+	heroElement.classList.add("dagens");
+	heroElement.classList.remove("dagens");
+}
 
 // 6. Säkerhetsförsök: sätt p.innerHTML = '<img src="x" onerror="console.log(\'Attack!\')">'
 //    Vad händer i Console? Byt sedan till p.textContent med samma text. Vad händer nu?
+// Det står attack i console när innerHTML används och img-taggen försöker ladda en ogiltig bild.
+// När textContent används visas bara texten som den är, ingen kod exekveras.
 // TODO
+// Byt till textContent
+//p.innerHTML = '<img src="x" onerror="console.log(\'Attack!\')">';
+p.textContent = '<img src="x" onerror="console.log(\'Attack!\')">';
 
 
 // DEL 2: koppla ihop med funktionerna i ui.js ----------------------------
